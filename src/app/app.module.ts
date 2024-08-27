@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import {NgOptimizedImage} from "@angular/common";
 import { LayoutComponent } from '../components/layout/layout.component';
+import { LeftModalComponent } from '../components/modals/left-modal/left-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    LayoutComponent
+    LayoutComponent,
+    LeftModalComponent
   ],
   imports: [
     BrowserModule,

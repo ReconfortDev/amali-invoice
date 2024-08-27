@@ -9,8 +9,14 @@ export class AppComponent {
   title = 'invoice-app';
 
   isfilterOpened = false;
+  isModalOpened = false;
 
-  setFilterStatus(){
+  toggleFilter(){
     this.isfilterOpened = !this.isfilterOpened;
   }
+
+  toggleModal(){
+    this.isModalOpened = !this.isModalOpened;
+  }
+
 }

@@ -10,3 +10,18 @@
   font-style: normal;
   transition: all ease-in-out 0.4s;
 }
+
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 12px !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}

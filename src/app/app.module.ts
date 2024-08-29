@@ -7,18 +7,24 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import {NgOptimizedImage} from "@angular/common";
 import { LayoutComponent } from '../components/layout/layout.component';
 import { LeftModalComponent } from '../components/modals/left-modal/left-modal.component';
+import { NewInvoiceFormComponent } from './form/new-invoice-form/new-invoice-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {ItemListComponent} from "./form/item-list/item-list.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     LayoutComponent,
-    LeftModalComponent
+    LeftModalComponent,
+    NewInvoiceFormComponent,
+    ItemListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

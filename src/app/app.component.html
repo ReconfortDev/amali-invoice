@@ -65,8 +65,12 @@
         the
         <b (click)="toggleModal()">New Invoice</b> button and get started</p>
     </div>
+
   </app-layout>
-  <app-left-modal [openModal]="isModalOpened" (toggleModal)="toggleModal()">
-    <h1 class="text-2xl text-dark dark:text-light">Hello world</h1>
+  <app-left-modal
+    [openModal]="isModalOpened"
+    (toggleModal)="toggleModal()"
+    [title]="'New invoice'">
+    <app-new-invoice-form/>
   </app-left-modal>
 </div>

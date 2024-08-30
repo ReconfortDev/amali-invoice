@@ -10,6 +10,9 @@ import { LeftModalComponent } from '../components/modals/left-modal/left-modal.c
 import { NewInvoiceFormComponent } from './form/new-invoice-form/new-invoice-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {ItemListComponent} from "./form/item-list/item-list.component";
+import {InvoiceListComponent} from "../components/invoice-list/invoice-list.component";
+import { SingleinvoiceComponent } from './singleinvoice/singleinvoice.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import {ItemListComponent} from "./form/item-list/item-list.component";
     LeftModalComponent,
     NewInvoiceFormComponent,
     ItemListComponent,
+    InvoiceListComponent,
+    SingleinvoiceComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

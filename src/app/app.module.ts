@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,8 +11,14 @@ import { NewInvoiceFormComponent } from './form/new-invoice-form/new-invoice-for
 import {ReactiveFormsModule} from "@angular/forms";
 import {ItemListComponent} from "./form/item-list/item-list.component";
 import {InvoiceListComponent} from "../components/invoice-list/invoice-list.component";
-import { SingleinvoiceComponent } from './singleinvoice/singleinvoice.component';
-import { HomeComponent } from './home/home.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {SingleinvoiceComponent} from "./pages/singleinvoice/singleinvoice.component";
+import {HomeComponent} from "./pages/home/home.component";
+import { EffectsModule } from '@ngrx/effects';
+import {invoiceReducer} from "./store/invoices/invoices.reducer";
+import {InvoiceEffects} from "./store/invoices/invoices.effects";
+import {provideHttpClient} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,9 +36,13 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({invoices: invoiceReducer}, {}),
+    EffectsModule.forRoot([InvoiceEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
